@@ -11,6 +11,66 @@
 */
 
 .page {
+  padding-block-start: 100px;
+  color: var(--basic-color, #000);
+  font-family: var(--basic-font, 'Inter', sans-serif);
+  background-color: var(--basic-background-color, #fff);
+  background-image: var(--background_image, none);
+  background-size: cover;
+  background-attachment: fixed;
+  font-variation-settings: 'wght' var(--weight_basic-text-card, 400);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  font-family: var(--accent-font, 'PressStart2P', serif);
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.header_add {
+  margin-inline: auto;
+  border: 2px solid var(--basic-color);
+  background-color: var(--basic-background-color);
+  max-inline-size: 700px; /*696px - см по PP*/
+  margin-block-end: 100px; /*128px - см по PP*/
+}
+
+.header_html {
+  font-size: clamp(3.125rem, 2.7949rem + 1.4085vw, 4.0625rem); /*проверить по PP*/
+}
+
+.header_html-add {
+  margin-block-start: clamp(7.5rem, 7.2799rem + 0.939vw, 8.125rem); /*проверить по PP*/
+  margin-block-end: 20px;
+}
+
+.header_tag {
+  font-size: clamp(0.9375rem, 0.7614rem + 0.7512vw, 1.4375rem); /*проверить по PP*/
+}
+
+.header_navigation {
+  margin-block: 25px;
+}
+
+.header_navigation-list {
+  display: grid;
+  gap: 8px;
+  padding-inline-start: 20px;
+}
+
+.header_navigation-item {} /*вроде, не нужно*/
+
+.header_button {
+  position: relative;
+  border: none;
+  font-size: 14px;
+  background: transparent;
+  appearance: none;
+  color: transparent;
+  text-transform: uppercase;
 }
