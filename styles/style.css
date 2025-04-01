@@ -74,3 +74,126 @@
   color: transparent;
   text-transform: uppercase;
 }
+
+.main {
+  display: grid;
+  justify-items: center;
+  gap: 57px;
+  padding-block-end: 103px;
+}
+
+.article_list {
+  display: grid;
+  gap: 50px;
+}
+
+.article_list-itme {}
+
+.article {
+  margin-inline: auto;
+  border: 2px solid var(--basic-color, #000);
+  background: var(--basic-background-color, #fff);
+  max-inline-size: 696px; /* проверить */
+}
+
+.article_title {
+  border-block-end: 2px solid var(--basic-color, #000);
+  padding: 3px 10px; /* 3px или 5px ? */
+  margin: 3px 0 0 0; /* 3px или 5px ? */
+  font-size: 18px;
+  line-height: 100%; /*или normal?:)*/
+  font-variation-settings: 'wght' var(--weight_title-card, 700);
+}
+
+.image_div {
+  position: relative;
+  overflow: hidden; /*Если содержимое блока будет больше, чем границы блока, оно будет «обрезано» */
+}
+
+.image_html {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  text-transform: uppercase;
+  color: var(--basic-color, #000);
+  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-size: 14px;
+  line-height: normal;
+  text-shadow: 0 0 1px var(--basic-background-color, #fff);
+  inset-inline-end: 13px; /* проверить */
+  inset-block-start: 24px; /* проверить */
+  mix-blend-mode: hard-light; /* по макету:) */
+}
+
+.image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: auto; /*или aspect-ratio: 1 / 1 ? нужно вообще?*/
+}
+
+.article_text {
+  display: grid;
+  gap: 27px;
+  border-block-start: 2px solid var(--basic-color, #000);
+  padding: 27px 25px 0 25px; /* проверить */
+  font-size: 18px;
+ /* line-height: calc(21 / 18); вроде, можно без calc() :)*/
+  line-height: 21px;
+}
+
+.set-buttons_article {
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 5px;
+  padding: 25px 25px 25px 25px; /* проверить */
+}
+
+.button {
+  appearance: none; /* «сброс» внешнего вида элемента для всех браузеров */
+  position: relative;
+  z-index: 1; /*нужно ли?*/
+  border: 2px solid var(--basic-color, #000);
+  padding: 12.5px 37px; /* проверить */
+  font-family: var(--accent-font, 'PressStart2P', serif);
+  font-size: 14px;
+  text-transform: capitalize;
+  background-color: var(--basic-background-color, #fff);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none; /* убрала обводку */
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--basic-color, #000); /*тень нужна?*/
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* Свойство inset заменяет собой сразу четыре свойства: top, right, bottom и left. 
+  Позволяет указать смещение позиционированного элемента сразу со всех четырёх сторон. */
+  z-index: -1; /* проверить */
+  background-color: var(--basic-color, #000);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left; /* проверить */
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button {}
+
+.button__text {
+  color: var(--basic-background-color, #fff);
+  mix-blend-mode: difference; /*вычитает более тёмный цвет из более светлого;*/ /*может, exclusion?*/ 
+}
