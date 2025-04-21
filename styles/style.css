@@ -1,24 +1,52 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ like-icon — для svg-иконки анимированного сердца +++
+✦ card__like-button — для кнопки Like рядом с иконкой +++
+✦ card__icon-button — для кнопки, оборачивающей иконку +++
+✦ card__icon-button — для кнопки, оборачивающей иконку +++(the same)
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца +++(in animations.css)
+✦ button__text — для обозначения текстового элемента внутри кнопки +++
 
 */
 
+.filter-grayscale_img-2 {
+  filter: grayscale(70%);
+}
+
+.filter-saturate_img-3 {
+  filter: saturate(250%);
+}
+
+.filter-several_img-4 {
+  filter: contrast(80%) hue-rotate(29deg) saturate(130%);
+}
+
+.filter-invert_img-5 {
+  filter: invert(90%);
+}
+
+.filter-sepia_img-6 {
+  filter: sepia(90%);
+}
+
+.filter-blur_img-7 {
+  filter: blur(1px);
+}
+
+.filter-several_img-8 {
+  filter: hue-rotate(85deg) opacity(65%) blur(3px);
+}
+
 .page {
   padding-block-start: 100px;
-  color: var(--basic-color, #000);
+  color: var(--basic-color);
   font-family: var(--basic-font, 'Inter', sans-serif);
-  background-color: var(--basic-background-color, #fff);
+  background-color: var(--basic-background-color);
   background-image: var(--background_image, none);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--weight_basic-text-card, 400);
+  font-variation-settings: 'wght' var(--weight_basic-text-card);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
@@ -27,7 +55,7 @@
   display: grid;
   justify-content: center;
   justify-items: center;
-  font-family: var(--accent-font, 'PressStart2P', serif);
+  font-family: var(--accent-font);
   line-height: normal;
   text-transform: uppercase;
 }
@@ -36,21 +64,22 @@
   margin-inline: auto;
   border: 2px solid var(--basic-color);
   background-color: var(--basic-background-color);
-  max-inline-size: 700px; /*696px - см по PP*/
-  margin-block-end: 100px; /*128px - см по PP*/
+  max-inline-size: 700px;
+  margin-block-end: 100px;
+  padding-block-end: 10px;
 }
 
 .header_html {
-  font-size: clamp(3.125rem, 2.7949rem + 1.4085vw, 4.0625rem); /*проверить по PP*/
+  font-size: clamp(3.125rem, 2.7949rem + 1.4085vw, 4.0625rem);
 }
 
 .header_html-add {
-  margin-block-start: clamp(7.5rem, 7.2799rem + 0.939vw, 8.125rem); /*проверить по PP*/
+  margin-block-start: clamp(7.5rem, 7.2799rem + 0.939vw, 8.125rem);
   margin-block-end: 20px;
 }
 
 .header_tag {
-  font-size: clamp(0.9375rem, 0.7614rem + 0.7512vw, 1.4375rem); /*проверить по PP*/
+  font-size: clamp(0.9375rem, 0.7614rem + 0.7512vw, 1.4375rem);
 }
 
 .header_navigation {
@@ -63,13 +92,13 @@
   padding-inline-start: 20px;
 }
 
-.header_navigation-item {} /*вроде, не нужно*/
+.header_navigation-item {}
 
 .header_button {
   position: relative;
   border: none;
   font-size: 14px;
-  background: transparent;
+  background-color: transparent;
   appearance: none;
   color: transparent;
   text-transform: uppercase;
@@ -91,23 +120,23 @@
 
 .article {
   margin-inline: auto;
-  border: 2px solid var(--basic-color, #000);
-  background: var(--basic-background-color, #fff);
-  max-inline-size: 696px; /* проверить */
+  border: 2px solid var(--basic-color);
+  background-color: var(--basic-background-color);
+  max-inline-size: 696px;
 }
 
 .article_title {
-  border-block-end: 2px solid var(--basic-color, #000);
-  padding: 3px 10px; /* 3px или 5px ? */
-  margin: 3px 0 0 0; /* 3px или 5px ? */
+  border-block-end: 2px solid var(--basic-color);
+  padding: 3px 10px;
+  margin: 3px 0 0 0;
   font-size: 18px;
-  line-height: 100%; /*или normal?:)*/
-  font-variation-settings: 'wght' var(--weight_title-card, 700);
+  line-height: 100%;
+  font-variation-settings: 'wght' var(--weight_title-card);
 }
 
 .image_div {
   position: relative;
-  overflow: hidden; /*Если содержимое блока будет больше, чем границы блока, оно будет «обрезано» */
+  overflow: hidden;
 }
 
 .image_html {
@@ -115,31 +144,45 @@
   z-index: 1;
   opacity: 0.5;
   text-transform: uppercase;
-  color: var(--basic-color, #000);
+  color: var(--basic-color);
   font-family: var(--accent-font, 'PressStart2P', sans-serif);
   font-size: 14px;
   line-height: normal;
-  text-shadow: 0 0 1px var(--basic-background-color, #fff);
-  inset-inline-end: 13px; /* проверить */
-  inset-block-start: 24px; /* проверить */
-  mix-blend-mode: hard-light; /* по макету:) */
+  text-shadow: 0 0 1px var(--text-shadow-color);
+  inset-inline-end: 13px;
+  inset-block-start: 24px;
+  mix-blend-mode: hard-light;
+}
+
+.image_html-lowercase {
+  text-transform: lowercase;
+}
+
+.image_html-capitalize {
+  text-transform: capitalize;
 }
 
 .image {
   display: block;
   object-fit: cover;
   object-position: center;
+  min-width: 696px;
+  min-height: 696px;
   inline-size: 100%;
-  aspect-ratio: auto; /*или aspect-ratio: 1 / 1 ? нужно вообще?*/
+  aspect-ratio: auto;
+}
+
+.image-add {
+  object-fit: cover;
+  object-position: top left;
 }
 
 .article_text {
   display: grid;
   gap: 27px;
-  border-block-start: 2px solid var(--basic-color, #000);
-  padding: 27px 25px 0 25px; /* проверить */
+  border-block-start: 2px solid var(--basic-color);
+  padding: 27px 25px 0 25px;
   font-size: 18px;
- /* line-height: calc(21 / 18); вроде, можно без calc() :)*/
   line-height: 21px;
 }
 
@@ -148,41 +191,56 @@
   justify-content: end;
   align-items: stretch;
   gap: 5px;
-  padding: 25px 25px 25px 25px; /* проверить */
+  padding: 25px 25px 25px 25px;
+}
+
+.card__icon-button {
+  display: grid;
+  border: 1px solid transparent;
+  padding: 0px;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--basic-color);
 }
 
 .button {
-  appearance: none; /* «сброс» внешнего вида элемента для всех браузеров */
+  appearance: none;
   position: relative;
-  z-index: 1; /*нужно ли?*/
-  border: 2px solid var(--basic-color, #000);
-  padding: 12.5px 37px; /* проверить */
-  font-family: var(--accent-font, 'PressStart2P', serif);
+  z-index: 1;
+  border: 2px solid var(--basic-color);
+  padding: 12.5px 37px;
+  font-family: var(--accent-font);
   font-size: 14px;
-  text-transform: capitalize;
-  background-color: var(--basic-background-color, #fff);
-  transition: box-shadow 0.3s ease;
+  background-color: var(--basic-background-color);
   cursor: pointer;
 }
 
 .button:focus {
-  outline: none; /* убрала обводку */
+  outline: none;
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--basic-color, #000); /*тень нужна?*/
+  box-shadow: 2px 2px 0px 0px var(--basic-color);
 }
 
 .button::before {
   content: '';
   position: absolute;
-  inset: 0; /* Свойство inset заменяет собой сразу четыре свойства: top, right, bottom и left. 
-  Позволяет указать смещение позиционированного элемента сразу со всех четырёх сторон. */
-  z-index: -1; /* проверить */
-  background-color: var(--basic-color, #000);
+  inset: 0;
+  z-index: -1;
+  background-color: var(--basic-color);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
-  transform-origin: left; /* проверить */
+  transform-origin: left;
   inline-size: 100%;
   block-size: 100%;
 }
@@ -191,9 +249,101 @@
   transform: scaleX(1);
 }
 
-.card__like-button {}
+.card__like-button {
+  transition: box-shadow 0.3s ease;
+  text-transform: capitalize;
+}
+
+.button_save {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 18.5px 20px;
+}
+
+.button_icon-diskette {
+  inline-size: 21px;
+  block-size: 21px;
+  color: var(--basic-background-color);
+  mix-blend-mode: difference;
+}
 
 .button__text {
-  color: var(--basic-background-color, #fff);
-  mix-blend-mode: difference; /*вычитает более тёмный цвет из более светлого;*/ /*может, exclusion?*/ 
+  color: var(--basic-background-color);
+  mix-blend-mode: difference; 
+}
+
+.like-icon {
+  block-size: 36px;
+  inline-size: 39px;
+  margin-block-start: 8px;
+  margin-inline-end: 6px;
+}
+
+.modal {
+  border: 2px solid var(--basic-color);
+  padding: 30px;
+  color: var(--basic-color);
+  font-family: var(--accent-font);
+  line-height: 150%;
+  text-transform: uppercase;
+  background-color: var(--basic-background-color);
+  max-inline-size: 355px;
+}
+
+.modal[open] {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
+}
+
+.modal::backdrop {
+  background-color: var(--basic-color);
+  opacity: 0.75;
+}
+
+.set_modal-window {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__icon {
+  inline-size: 39px;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.modal__button {
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
+@media (width <= 375px) {
+  .modal {
+    padding: 30px 40px 30px 40px;
+    max-inline-size: 341px;
+  }
+
+  .button_save {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button_icon-diskette {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--basic-background-color)) or
+    (text-stroke: 1px var(--basic-background-color))
+) {
+  .image_html {
+    -webkit-text-stroke: 1px var(--basic-background-color);
+    text-shadow: none;
+  }
 }

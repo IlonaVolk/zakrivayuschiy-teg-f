@@ -2,6 +2,10 @@
 :root {
   --basic-color: #000000;
   --basic-background-color: #ffffff;
+  --text-shadow-color: #ffffff;
+  --heart-contour-color: #000000;
+  --heart-main-body-color: none;
+  --heart-core_main-body_contour_like-color: #ff0000;
   --heart_sparks: #ff0000;
   --basic-font: 'Inter', sans-serif;
   --accent-font: 'PressStart2P', serif;
