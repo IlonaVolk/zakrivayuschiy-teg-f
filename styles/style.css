@@ -10,32 +10,32 @@
 
 */
 
-.filter-grayscale_img-2 {
+.filter-grayscale {
   filter: grayscale(70%);
 }
 
-.filter-saturate_img-3 {
-  filter: saturate(250%);
+.filter-saturate {
+  filter: saturate(70%);
 }
 
-.filter-several_img-4 {
-  filter: contrast(80%) hue-rotate(29deg) saturate(130%);
+.filter-contrast-hue_rotate-saturate {
+  filter: contrast(80%) hue-rotate(40deg) saturate(100%);
 }
 
-.filter-invert_img-5 {
-  filter: invert(90%);
+.filter-invert {
+  filter: invert(15%);
 }
 
-.filter-sepia_img-6 {
-  filter: sepia(90%);
+.filter-sepia {
+  filter: sepia(25%);
 }
 
-.filter-blur_img-7 {
+.filter-blur {
   filter: blur(1px);
 }
 
-.filter-several_img-8 {
-  filter: hue-rotate(85deg) opacity(65%) blur(3px);
+.filter-hue_rotate-opacity-blur {
+  filter: hue-rotate(25deg) opacity(100%) blur(1px);
 }
 
 .page {
@@ -122,12 +122,12 @@
   margin-inline: auto;
   border: 2px solid var(--basic-color);
   background-color: var(--basic-background-color);
-  max-inline-size: 696px;
+  max-inline-size: 700px;
 }
 
 .article_title {
-  border-block-end: 2px solid var(--basic-color);
-  padding: 3px 10px;
+ /* border-block-end: 2px solid var(--basic-color); */
+  padding: 5px 10px;
   margin: 3px 0 0 0;
   font-size: 18px;
   line-height: 100%;
@@ -136,7 +136,7 @@
 
 .image_div {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* нужно ли? */
 }
 
 .image_html {
@@ -149,8 +149,8 @@
   font-size: 14px;
   line-height: normal;
   text-shadow: 0 0 1px var(--text-shadow-color);
-  inset-inline-end: 13px;
-  inset-block-start: 24px;
+  inset-inline-end: 22px;
+  inset-block-start: 29px;
   mix-blend-mode: hard-light;
 }
 
@@ -162,26 +162,40 @@
   text-transform: capitalize;
 }
 
-.image {
+.image { /*проверить размеры картинки, переделать, если надо*/
   display: block;
   object-fit: cover;
   object-position: center;
-  min-width: 696px;
-  min-height: 696px;
+/*  min-width: 375px; */
+  
+ /* min-height: 375px; */
+  width: 700px; /*изменила max-width на width*/ /*проверить, нужно ли? попроовать убрать:)*/
+ /* max-height: 700px; 
+  height: 100vh;*/ /*вроде, работает для картинок 1440px*/
   inline-size: 100%;
-  aspect-ratio: auto;
+  height: 700px; 
+ /* aspect-ratio: 1 / 1;  */
+ /* aspect-ratio: auto; */ /*нужна ли эта строчка?*/
+  border-block-start: 2px solid var(--basic-color);
+  border-block-end: 2px solid var(--basic-color);
 }
 
 .image-add {
-  object-fit: cover;
+/*  object-fit: cover; */
   object-position: top left;
+}
+
+.image-add_corr-location {
+ /* object-fit: cover; */
+  object-position: center left;
 }
 
 .article_text {
   display: grid;
   gap: 27px;
-  border-block-start: 2px solid var(--basic-color);
-  padding: 27px 25px 0 25px;
+ /* border-block-start: 2px solid var(--basic-color); */
+  margin-inline: 25px 25px;
+  margin-block: 25px 25px;
   font-size: 18px;
   line-height: 21px;
 }
@@ -190,18 +204,24 @@
   display: flex;
   justify-content: end;
   align-items: stretch;
-  gap: 5px;
-  padding: 25px 25px 25px 25px;
+  gap: 8px;
+  margin-inline: 0 25px;
+  margin-block: 0 25px;
+  height: 38px;
 }
 
 .card__icon-button {
   display: grid;
-  border: 1px solid transparent;
-  padding: 0px;
+  border: 2px solid transparent;
+  padding: 0 0 3px 6px; /*переделала для сердца, чтобы было по центру кнопки*/
   background-color: transparent;
-  transition: border-color 0.3s ease;
+  transition: border 0.3s ease;
   cursor: pointer;
   appearance: none;
+ /* height: 38px; */
+  width: 38px;
+  justify-content: center;
+  align-content: center; 
 }
 
 .card__icon-button:focus {
@@ -209,7 +229,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--basic-color);
+  border-color: var(--basic-color); 
 }
 
 .button {
@@ -252,6 +272,9 @@
 .card__like-button {
   transition: box-shadow 0.3s ease;
   text-transform: capitalize;
+  padding: 0;
+ /* height: 38px; */
+  width: 130px; 
 }
 
 .button_save {
@@ -260,7 +283,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 18.5px 20px;
+  padding: 15px 24px;
 }
 
 .button_icon-diskette {
@@ -272,7 +295,8 @@
 
 .button__text {
   color: var(--basic-background-color);
-  mix-blend-mode: difference; 
+  mix-blend-mode: difference;
+  font-size: 13.5px; /*изменила с 14px*/
 }
 
 .like-icon {
@@ -305,9 +329,14 @@
 }
 
 .set_modal-window {
-  display: flex;
+ /* display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 20px; */
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 5px;
+  padding: 25px 25px 25px 25px;
 }
 
 .modal__icon {
@@ -321,7 +350,24 @@
   inline-size: 100%;
 }
 
+@media (width <= 425px) {
+  .header_add {
+   /* inline-size: 425px; добавила, иначе не вставал на всю ширину*/
+  }
+}
+
 @media (width <= 375px) {
+
+  .header_add {
+    min-inline-size: 379px; /*поправила, иначе не вставал на всю ширину*/
+  }
+
+  .image { /*проверить размеры картинок*/
+    min-height: 375px; /*с min-height не встает нормально 2 картинки*/
+    min-width: 375px;
+    object-fit: cover;
+  }
+
   .modal {
     padding: 30px 40px 30px 40px;
     max-inline-size: 341px;

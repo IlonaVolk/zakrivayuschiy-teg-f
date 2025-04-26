@@ -12,6 +12,16 @@
 
 /* Basic*/
 
+.like-icon .core {
+  fill: var(--basic-background-color);
+  transition: fill 0.3s ease;
+}
+
+.like-icon .main-body {
+  fill: var(--basic-background-color);
+  transition: fill 0.3s ease 0.03s;
+}
+
 .like-icon .heart {
   transform-origin: center;
 }
