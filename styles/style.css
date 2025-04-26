@@ -40,13 +40,13 @@
 
 .page {
   padding-block-start: 100px;
-  color: var(--basic-color);
+  color: var(--basic-color, #000000);
   font-family: var(--basic-font, 'Inter', sans-serif);
-  background-color: var(--basic-background-color);
+  background-color: var(--basic-background-color, #ffffff);
   background-image: var(--background_image, none);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--weight_basic-text-card);
+  font-variation-settings: 'wght' var(--weight_basic-text-card, 400);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
@@ -55,15 +55,15 @@
   display: grid;
   justify-content: center;
   justify-items: center;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   line-height: normal;
   text-transform: uppercase;
 }
 
 .header_add {
   margin-inline: auto;
-  border: 2px solid var(--basic-color);
-  background-color: var(--basic-background-color);
+  border: 2px solid var(--basic-color, #000000);
+  background-color: var(--basic-background-color, #ffffff);
   max-inline-size: 700px;
   margin-block-end: 100px;
   padding-block-end: 10px;
@@ -120,23 +120,22 @@
 
 .article {
   margin-inline: auto;
-  border: 2px solid var(--basic-color);
-  background-color: var(--basic-background-color);
+  border: 2px solid var(--basic-color, #000000);
+  background-color: var(--basic-background-color, #ffffff);
   max-inline-size: 700px;
 }
 
 .article_title {
- /* border-block-end: 2px solid var(--basic-color); */
   padding: 5px 10px;
   margin: 3px 0 0 0;
   font-size: 18px;
   line-height: 100%;
-  font-variation-settings: 'wght' var(--weight_title-card);
+  font-variation-settings: 'wght' var(--weight_title-card, 700);
 }
 
 .image_div {
   position: relative;
-  overflow: hidden; /* нужно ли? */
+  overflow: hidden;
 }
 
 .image_html {
@@ -144,11 +143,11 @@
   z-index: 1;
   opacity: 0.5;
   text-transform: uppercase;
-  color: var(--basic-color);
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  color: var(--basic-color, #000000);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
   line-height: normal;
-  text-shadow: 0 0 1px var(--text-shadow-color);
+  text-shadow: 0 0 1px var(--text-shadow-color, #ffffff);
   inset-inline-end: 22px;
   inset-block-start: 29px;
   mix-blend-mode: hard-light;
@@ -162,66 +161,55 @@
   text-transform: capitalize;
 }
 
-.image { /*проверить размеры картинки, переделать, если надо*/
+.image {
   display: block;
   object-fit: cover;
   object-position: center;
-/*  min-width: 375px; */
-  
- /* min-height: 375px; */
-  width: 700px; /*изменила max-width на width*/ /*проверить, нужно ли? попроовать убрать:)*/
- /* max-height: 700px; 
-  height: 100vh;*/ /*вроде, работает для картинок 1440px*/
+  width: 700px;
+  height: 100vh;
   inline-size: 100%;
-  height: 700px; 
- /* aspect-ratio: 1 / 1;  */
- /* aspect-ratio: auto; */ /*нужна ли эта строчка?*/
-  border-block-start: 2px solid var(--basic-color);
-  border-block-end: 2px solid var(--basic-color);
+  height: 700px;
+  border-block-start: 2px solid var(--basic-color, #000000);
+  border-block-end: 2px solid var(--basic-color, #000000);
 }
 
 .image-add {
-/*  object-fit: cover; */
   object-position: top left;
 }
 
 .image-add_corr-location {
- /* object-fit: cover; */
   object-position: center left;
 }
 
 .article_text {
   display: grid;
+  margin: 25px 25px 25px 25px;
   gap: 27px;
- /* border-block-start: 2px solid var(--basic-color); */
-  margin-inline: 25px 25px;
-  margin-block: 25px 25px;
   font-size: 18px;
   line-height: 21px;
 }
 
 .set-buttons_article {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  height: 38px;
   justify-content: end;
   align-items: stretch;
-  gap: 8px;
   margin-inline: 0 25px;
   margin-block: 0 25px;
-  height: 38px;
+  gap: 6px;
 }
 
 .card__icon-button {
-  display: grid;
   border: 2px solid transparent;
-  padding: 0 0 3px 6px; /*переделала для сердца, чтобы было по центру кнопки*/
   background-color: transparent;
   transition: border 0.3s ease;
   cursor: pointer;
   appearance: none;
- /* height: 38px; */
   width: 38px;
+  display: grid;
   justify-content: center;
-  align-content: center; 
+  align-content: center;
 }
 
 .card__icon-button:focus {
@@ -229,18 +217,19 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--basic-color); 
+  border-color: var(--basic-color, #000000);
 }
 
 .button {
-  appearance: none;
   position: relative;
+  appearance: none;
   z-index: 1;
-  border: 2px solid var(--basic-color);
-  padding: 12.5px 37px;
-  font-family: var(--accent-font);
+  border: 2px solid var(--basic-color, #000000);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
-  background-color: var(--basic-background-color);
+  line-height: 90%;
+  letter-spacing: 0;
+  background-color: var(--basic-background-color, #ffffff);
   cursor: pointer;
 }
 
@@ -249,7 +238,7 @@
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--basic-color);
+  box-shadow: 2px 2px 0px 0px var(--basic-color, #000000);
 }
 
 .button::before {
@@ -257,7 +246,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: var(--basic-color);
+  background-color: var(--basic-color, #000000);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -270,11 +259,10 @@
 }
 
 .card__like-button {
-  transition: box-shadow 0.3s ease;
   text-transform: capitalize;
-  padding: 0;
- /* height: 38px; */
-  width: 130px; 
+  transition: box-shadow 0.3s ease;
+  width: 130px;
+  height: 38px;
 }
 
 .button_save {
@@ -283,38 +271,48 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 15px 24px;
+  margin-top: -5px;
+  padding: 15px 23px 15px 20px;
 }
 
 .button_icon-diskette {
   inline-size: 21px;
   block-size: 21px;
-  color: var(--basic-background-color);
+  color: var(--basic-background-color, #ffffff);
   mix-blend-mode: difference;
 }
 
 .button__text {
-  color: var(--basic-background-color);
+  color: var(--basic-background-color, #ffffff);
+  font-size: 14px;
+  line-height: 90%;
   mix-blend-mode: difference;
-  font-size: 13.5px; /*изменила с 14px*/
+}
+
+.button__text-like {
+  padding-inline: 29px;
+  padding-block: 10px;
 }
 
 .like-icon {
   block-size: 36px;
   inline-size: 39px;
-  margin-block-start: 8px;
-  margin-inline-end: 6px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
 .modal {
-  border: 2px solid var(--basic-color);
+  border: 2px solid var(--basic-color, #000000);
   padding: 30px;
-  color: var(--basic-color);
-  font-family: var(--accent-font);
+  color: var(--basic-color, #000000);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
+  font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  background-color: var(--basic-background-color);
+  background-color: var(--basic-background-color, #ffffff);
   max-inline-size: 355px;
+  max-block-size: 194px;
 }
 
 .modal[open] {
@@ -324,19 +322,14 @@
 }
 
 .modal::backdrop {
-  background-color: var(--basic-color);
+  background-color: var(--basic-color, #000000);
   opacity: 0.75;
 }
 
 .set_modal-window {
- /* display: flex;
-  align-items: center;
-  gap: 20px; */
   display: flex;
-  justify-content: end;
-  align-items: stretch;
-  gap: 5px;
-  padding: 25px 25px 25px 25px;
+  gap: 20px;
+  align-items: center;
 }
 
 .modal__icon {
@@ -348,24 +341,42 @@
 .modal__button {
   text-transform: uppercase;
   inline-size: 100%;
+  height: 38px;
 }
 
 @media (width <= 425px) {
-  .header_add {
-   /* inline-size: 425px; добавила, иначе не вставал на всю ширину*/
+  .image {
+    height: 425px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 }
 
 @media (width <= 375px) {
 
   .header_add {
-    min-inline-size: 379px; /*поправила, иначе не вставал на всю ширину*/
+    min-inline-size: 375px;
+    min-block-size: 327px;
   }
 
-  .image { /*проверить размеры картинок*/
-    min-height: 375px; /*с min-height не встает нормально 2 картинки*/
-    min-width: 375px;
+  .header_navigation {
+    margin-block-end: 3px;
+  }
+
+  .header_tag {
+    font-size: clamp(0.875rem, 0.4063rem + 2vw, 0.9375rem);
+    margin-block-end: 13px;
+  }
+  
+  .image {
+    height: 375px;
+    width: 375px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+  }
+
+  .set-buttons_article {
+    margin-inline-end: 27px;
   }
 
   .modal {
@@ -385,11 +396,11 @@
 }
 
 @supports (
-  (-webkit-text-stroke: 1px var(--basic-background-color)) or
-    (text-stroke: 1px var(--basic-background-color))
+  (-webkit-text-stroke: 1px var(--basic-background-color, #ffffff)) or
+    (text-stroke: 1px var(--basic-background-color, #ffffff))
 ) {
   .image_html {
-    -webkit-text-stroke: 1px var(--basic-background-color);
+    -webkit-text-stroke: 1px var(--basic-background-color, #ffffff);
     text-shadow: none;
   }
 }
