@@ -290,9 +290,7 @@
   text-transform: uppercase;
   background-color: var(--basic-background-color, #ffffff);
   max-inline-size: 355px;
-  margin-inline-end: 541px;
-  margin-block-end: 329px;
-  opacity: 0.3;
+  /*убрала свойство для корректного отображения modal*/
 }
 
 .modal[open] {
@@ -369,8 +367,6 @@
   .modal {
     padding: 30px 40px 30px 40px;
     max-inline-size: 341px;
-    margin-inline-end: 17px;
-    margin-block-end: 238px;
   }
 
   .button_save {
